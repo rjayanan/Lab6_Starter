@@ -24,7 +24,7 @@ function getRecipesFromStorage() {
   // A9. TODO: - Complete the functionality as described in this function
   //           header. It is possible in only a single line, but should
   //           be no more than a few lines.
-  let data = JSON.parse(localStorage.getItem('recipes'));
+  let data = JSON.parse(window.localStorage.getItem('recipes'));
   return data;
 }
 
@@ -72,7 +72,7 @@ function saveRecipesToStorage(recipes) {
   //            header. It is possible in only a single line, but should
   //            be no more than a few lines.
   let string_recipes = JSON.stringify(recipes)
-  localStorage.setItem('recipes', string_recipes);
+  window.localStorage.setItem('recipes', string_recipes);
 }
 
 /**
@@ -115,7 +115,7 @@ function initFormHandler() {
   delete_button.addEventListener('click', (event) => {
     // Steps B12 & B13 will occur inside the event listener from step B11
     // B12. TODO - Clear the local storage
-    localStorage.clear();
+    window.localStorage.clear();
     // B13. TODO - Delete the contents of <main>
     main.innerHTML = '';
   });
